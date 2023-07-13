@@ -1,7 +1,7 @@
 // controllers/api/diaryController.js
 const express = require('express');
 const router = express.Router();
-const { Diary } = require('../../Models');
+const Diary  = require('../../models/Diary');
 
 // GET route for retrieving all diary entries
 router.get('/', async (req, res) => {

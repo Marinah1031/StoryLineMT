@@ -1,8 +1,9 @@
--- Drop the tables if they exist
-DROP TABLE IF EXISTS diary;
-DROP TABLE IF EXISTS users;
 
--- Create the users table
+DROP DATABASE IF EXISTS user_db;
+CREATE DATABASE user_db;
+
+USE user_db;
+
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(255) NOT NULL,
@@ -10,9 +11,9 @@ CREATE TABLE users (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Create the diary table
+
 CREATE TABLE diary (
-  id INT AUTO_INCREMENT PRIMARY KEY,
+ id INT AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
   content TEXT NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
