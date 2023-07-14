@@ -1,6 +1,6 @@
 // controllers/homepageController.js
 const express = require('express');
-const { Diary } = require('../Models');
+const { Diary } = require('../models');
 const router = express.Router();
 
 // GET route for the homepage
