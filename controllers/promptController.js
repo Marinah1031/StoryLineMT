@@ -28,5 +28,5 @@ module.exports = {
 //console.log(prompt);
 
 // You can use promptSync to get user input as well, if needed.
-// const userInput = promptSync('Enter your response: ');
-// console.log(`User's response: ${userInput}`);
+const userInput = promptSync('Enter your response: ');
+console.log(`User's response: ${userInput}`);

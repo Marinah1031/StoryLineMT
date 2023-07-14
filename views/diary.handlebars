@@ -5,7 +5,14 @@
   <form action="/api/diary" method="POST">
     <input type="text" name="title" placeholder="Title" required>
     <textarea name="content" placeholder="Content" required></textarea>
-    <button onclick="generatePrompt()">Click Me for Prompt</button>
+    {{!-- <button id=onclick="generatePrompt()">Click Me for Prompt</button> --}}
+    <button id="generatePrompt" class="btn">Generate Prompt</button>
+    </div class="promptArea">
+     <textarea name="content" readonly
+            id="prompt"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
     <button type="submit">Save Entry</button>
   </form>
 </div>
@@ -16,4 +23,4 @@
     {{> diaryCard this}}
   {{/each}}
 </div>
-<script src="/js/prompts.js"></script>
+<script src="./public/js/prompts.js"></script>
