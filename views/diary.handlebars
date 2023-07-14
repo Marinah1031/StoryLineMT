@@ -5,6 +5,9 @@
   <form action="/api/diary" method="POST">
     <input type="text" name="title" placeholder="Title" required>
     <textarea name="content" placeholder="Content" required></textarea>
+    {{!-- <button id=onclick="generatePrompt()">Click Me for Prompt</button> --}}
+    <button id="generatePrompt" class="btn">Generate Prompt</button>
+    <div class="promptArea"></div>
     <button type="submit">Save Entry</button>
   </form>
 </div>
@@ -15,4 +18,4 @@
     {{> diaryCard this}}
   {{/each}}
 </div>
-</div>
+<script src="/js/prompt.js"></script>
