@@ -1,13 +1,13 @@
 // controllers/api/diaryController.js
 const express = require('express');
 const router = express.Router();
-const Diary  = require('../../models/Diary');
+const Diary  = require('../../Models/Diary');
 
 // GET route for retrieving all diary entries
 router.get('/', async (req, res) => {
   try {
     const diaryEntries = await Diary.findAll();
-    res.status(200).json(diaryEntries);
+    res.status(200).redirect('/')
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const newDiaryEntry = await Diary.create(req.body);
-    res.status(201).json(newDiaryEntry);
+    res.status(201).redirect('/diary')
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });
