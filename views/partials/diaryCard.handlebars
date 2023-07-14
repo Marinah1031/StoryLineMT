@@ -14,7 +14,10 @@
         </p>
       </div>
       <div class="control">
-  <textarea class="textarea" readonly>{{content}}</textarea>
+        <form action="/api/diary/{{id}}" method="POST">
+         <button type="submit">Update Entry</button>
+        <textarea name="content" placeholder="5 lines of textarea" rows="5">{{content}}</textarea>
+</form>
 </div>
       
       <nav class="level is-mobile">
