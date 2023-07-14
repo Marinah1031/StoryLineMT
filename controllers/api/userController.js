@@ -1,7 +1,9 @@
 // controllers/api/userController.js
 const express = require('express');
 const router = express.Router();
-const { User } = require('../../models');
+
+const User = require('../../models/User');
+
 
 // GET route for retrieving user data
 router.get('/:id', async (req, res) => {
