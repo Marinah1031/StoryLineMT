@@ -1,13 +1,9 @@
 var generateBtn = document.querySelector("#generatePrompt");
 generateBtn.addEventListener("click", generatePrompt);
-// const { generatePrompt }  = require('./controllers/promptController');
-
+var promptArea = document.querySelector('.promptArea')
+console.log('yo peeps')
 // Prompt generation and display
-const prompt = generatePrompt();
 console.log(prompt);
-
-// Add your application's logic here
-const promptSync = require('prompt-sync')();
 
 // Array of prompts
 const prompts = [
@@ -26,16 +22,6 @@ function generatePrompt() {
   const randomIndex = Math.floor(Math.random() * prompts.length);
 
   // Return the randomly selected prompt
-  return prompts[randomIndex];
+  promptArea.textContent = prompts[randomIndex];
 }
-
-module.exports = {
-    generatePrompt,
-  };
-// Prompt generation and display
-//const prompt = generatePrompt();
-//console.log(prompt);
-
-// You can use promptSync to get user input as well, if needed.
-const userInput = promptSync('Enter your response: ');
 console.log(`User's response: ${userInput}`);
