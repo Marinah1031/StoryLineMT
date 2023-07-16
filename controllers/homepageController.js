@@ -29,13 +29,14 @@ router.get('/login', (req, res) => {
   });
   
   // GET diary page
-  router.get('/diary', async (req, res) => {
-    const stories = await Diary.findAll({
-      order: [['createdAt', 'desc']]
-    })
-    const diaryEntries = stories.map(entry => entry.get({ plain: true }))
-    res.render('diary', { diaryEntries });
-  });
+   router.get('/diary', async (req, res) => {
+     const stories = await Diary.findAll({
+       order: [['createdAt', 'desc']]
+     })
+     const diaryEntries = stories.map(entry => entry.get({ plain: true }))
+     res.render('diary', { diaryEntries });
+   });
+
   
   // POST diary entry submission
   router.post('/diary', (req, res) => {

@@ -17,11 +17,33 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// POST route for user login
+router.post('/login', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    // Find the user by username
+    const user = await User.findOne({ where: { username } });
+
+    // If user not found or password is incorrect, send an error response
+    if (!user || !user.checkPassword(password)) {
+      return res.status(401).json({ message: 'Invalid credentials' });
+    }
+
+    // Redirect the user to the diary page
+    res.redirect('/diary');
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 // POST route for adding a new user
-router.post('/', async (req, res) => {
+router.post('/register', async (req, res) => {
   try {
     const newUser = await User.create(req.body);
-    res.status(201).json(newUser);
+    //res.status(201).json(newUser);
+    res.redirect('/diary');
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });

@@ -24,4 +24,3 @@ function generatePrompt() {
   // Return the randomly selected prompt
   promptArea.textContent = prompts[randomIndex];
 }
-console.log(`User's response: ${userInput}`);
