@@ -10,16 +10,22 @@
         <p>
           <strong>{{title}}</strong> <small>***</small> <small>{{datetime createdAt}}</small>
           <br>
-       
+
         </p>
       </div>
       <div class="control">
         <form action="/api/diary/{{id}}" method="POST">
-         <button type="submit">Update Entry</button>
-        <textarea name="content" placeholder="5 lines of textarea" rows="5">{{content}}</textarea>
-</form>
-</div>
-      
+          <button type="submit">Update Entry</button>
+          <textarea name="content" placeholder="5 lines of textarea" rows="5">{{content}}</textarea>
+        </form>
+      </div>
+ <div class="control">
+        <form action="/api/diary/{{id}}" method="DELETE">
+        <button type="delete">Delete Entry</button>
+          <textarea name="content" placeholder="5 lines of textarea" rows="5">{{content}}</textarea>
+        </form>
+      </div>
+
       <nav class="level is-mobile">
         <div class="level-left">
           <a class="level-item" aria-label="reply">
