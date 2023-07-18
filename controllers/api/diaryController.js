@@ -17,31 +17,8 @@ router.get('/', async (req, res) => {
 // POST route for adding a new diary entry
 router.post('/', async (req, res) => {
   try {
-    const newDiaryEntry = await Diary.create(req.body);
-    console.log(newDiaryEntry)
-    console.log(req.body)
-    res.status(201).redirect('/diary')
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Server error' });
-  }
-});
 
-router.post('/:id', async (req, res) => {
-  try {
-    console.log(req.body)
-    const newDiaryEntry = await Diary.update(
-      {
-        content: req.body.content
-      },
-    {
-      where:{
-        id : req.params.id
-      },
-    }
-    );
-    console.log(newDiaryEntry)
-   
+    const newDiaryEntry = await Diary.create({ ...req.body, user_id: req.session.user_id });
     res.status(201).redirect('/diary')
   } catch (error) {
     console.error(error);
