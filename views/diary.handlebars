@@ -2,12 +2,11 @@
 
 <div class="diary-entry-form">
   <h2>Create Diary Entry</h2>
+  <button id="generatePrompt" class="btn">Generate Prompt</button>
+  <div class="promptArea"></div>
   <form action="/api/diary" method="POST">
     <input type="text" name="title" placeholder="Title" required>
     <textarea name="content" placeholder="Content" required></textarea>
-    {{!-- <button id=onclick="generatePrompt()">Click Me for Prompt</button> --}}
-    <button id="generatePrompt" class="btn">Generate Prompt</button>
-    <div class="promptArea"></div>
     <button type="submit">Save Entry</button>
      
   </form>
@@ -20,7 +19,5 @@
   {{/each}}
   </form>
 </div>
-
- 
-
 <script src="/js/prompt.js"></script>
+
