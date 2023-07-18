@@ -7,7 +7,7 @@ module.exports = {
         const dayAndTime = array[2]
         const time = dayAndTime.split('T')[1]
         const day = dayAndTime.split('T')[0]
-        return `${day}, ${month}, ${year}
+        return ` Month: ${month} Day: ${day} Year: ${year}
         `
     }
 }
