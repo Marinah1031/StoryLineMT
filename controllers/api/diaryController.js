@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
 // POST route for adding a new diary entry
 router.post('/', async (req, res) => {
   try {
+
     const newDiaryEntry = await Diary.create({ ...req.body, user_id: req.session.user_id });
     res.status(201).redirect('/diary')
   } catch (error) {
@@ -26,18 +27,19 @@ router.post('/', async (req, res) => {
 });
 
 // DELETE route for deleting a diary entry by ID
-router.delete('/:id', async (req, res) => {
+router.post('/delete/:id', async (req, res) => {
   try {
     const diaryEntry = await Diary.findByPk(req.params.id);
     if (!diaryEntry) {
       return res.status(404).json({ message: 'Diary entry not found' });
     }
     await diaryEntry.destroy();
-    res.status(204).end();
+    res.redirect('/diary')
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });
   }
 });
+
 
 module.exports = router;

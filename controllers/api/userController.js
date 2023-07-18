@@ -46,6 +46,7 @@ req.session.user_id = user.id
 // POST route for adding a new user
 router.post('/register', async (req, res) => {
   try {
+    console.log('test')
     const newUser = await User.create(req.body);
     //res.status(201).json(newUser);
     res.redirect('/diary');
