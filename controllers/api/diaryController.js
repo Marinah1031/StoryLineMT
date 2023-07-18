@@ -26,6 +26,28 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.post('/:id', async (req, res) => {
+  try {
+    console.log(req.body)
+    const newDiaryEntry = await Diary.update(
+      {
+        content: req.body.content
+      },
+    {
+      where:{
+        id : req.params.id
+      },
+    }
+    );
+    console.log(newDiaryEntry)
+   
+    res.status(201).redirect('/diary')
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 // DELETE route for deleting a diary entry by ID
 router.post('/delete/:id', async (req, res) => {
   try {
