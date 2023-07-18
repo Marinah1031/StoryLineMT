@@ -8,7 +8,7 @@
     <div class="media-content">
       <div class="content">
         <p>
-          <strong>{{title}}</strong> <small>***</small> <small>{{datetime createdAt}}</small>
+          <strong>{{title}}</strong> <small>{{datetime createdAt}}</small>
           <br>
 
         </p>
@@ -19,10 +19,9 @@
           <textarea name="content" placeholder="5 lines of textarea" rows="5">{{content}}</textarea>
         </form>
       </div>
- <div class="control">
-        <form action="/api/diary/{{id}}" method="DELETE">
-        <button type="delete">Delete Entry</button>
-          <textarea name="content" placeholder="5 lines of textarea" rows="5">{{content}}</textarea>
+      <div class="control">
+        <form action="/api/diary/delete/{{id}}" method="POST">
+          <button type="submit">Delete Entry</button>
         </form>
       </div>
 

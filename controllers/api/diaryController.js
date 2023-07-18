@@ -50,14 +50,14 @@ router.post('/:id', async (req, res) => {
 });
 
 // DELETE route for deleting a diary entry by ID
-router.delete('/:id', async (req, res) => {
+router.post('/delete/:id', async (req, res) => {
   try {
     const diaryEntry = await Diary.findByPk(req.params.id);
     if (!diaryEntry) {
       return res.status(404).json({ message: 'Diary entry not found' });
     }
     await diaryEntry.destroy();
-    res.status(204).end();
+    res.redirect('/diary')
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });
