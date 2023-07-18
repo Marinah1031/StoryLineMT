@@ -29,9 +29,14 @@ router.post('/login', async (req, res) => {
     if (!user || !user.checkPassword(password)) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
-
+    console.log(user.id)
+req.session.user_id = user.id
     // Redirect the user to the diary page
-    res.redirect('/diary');
+    req.session.save(() => {
+      
+       res.redirect('/diary');
+    })
+   
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });
