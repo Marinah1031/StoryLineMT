@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 // POST route for adding a new diary entry
 router.post('/', async (req, res) => {
   try {
-    const newDiaryEntry = await Diary.create(req.body);
+    const newDiaryEntry = await Diary.create({ ...req.body, user_id: req.session.user_id });
     res.status(201).redirect('/diary')
   } catch (error) {
     console.error(error);

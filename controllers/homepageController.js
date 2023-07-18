@@ -1,6 +1,6 @@
 // controllers/homepageController.js
 const express = require('express');
-const { Diary } = require('../models');
+const { Diary, User } = require('../models');
 const router = express.Router();
 
 // GET route for the homepage
@@ -30,14 +30,23 @@ router.get('/login', (req, res) => {
   
   // GET diary page
    router.get('/diary', async (req, res) => {
-     const stories = await Diary.findAll({
-       order: [['createdAt', 'desc']]
-     })
-     const diaryEntries = stories.map(entry => entry.get({ plain: true }))
+    const userId = req.session.user_id;
+    console.log(userId, req.session)
+    const user = await User.findByPk(userId, {
+      include: [{ model: Diary, order: [['createdAt', 'desc']]}]
+    })
+
+    if (!user) {
+      console.log('issues')
+      return res.status(404).json({ message: ':/'})
+    }
+    const stories = user.get({ plain: true }).diaries
+
+     const diaryEntries = stories
      res.render('diary', { diaryEntries });
    });
 
-  
+
   // POST diary entry submission
   router.post('/diary', (req, res) => {
     // Handle diary entry form submission
