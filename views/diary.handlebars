@@ -3,12 +3,14 @@
 
 <div class="diary-entry-form">
   <h2>Create Diary Entry</h2>
-  <button id="generatePrompt" class="btn">Generate Prompt</button>
+  <button id="generatePrompt" class="button is-warning">Generate Prompt</button>
   <div class="promptArea"></div>
   <form action="/api/diary" method="POST">
-    <input type="text" name="title" placeholder="Title" required>
-    <textarea name="content" placeholder="Content" required></textarea>
-    <button type="submit">Save Entry</button>
+
+    <p><input type="text"class="input is-primary" name="title" placeholder="Title" required>
+</p>
+    <textarea name="content" class="textarea is-primary" placeholder="Content" rows="10"required></textarea>
+    <button type="submit" class="button is-success" >Save Entry</button>
      
   </form>
 </div>

@@ -10,22 +10,25 @@
       <div class="content">
         <p>
           <strong>{{title}}</strong> <small>{{datetime createdAt}}</small>
-      <div class="control">
-        <form action="/api/diary/{{id}}" method="POST">
-          <button type="submit" class="button is-success">Update Entry</button>
-        </form>
-      </div>
-      </p>
-<p>
-      <textarea name="content" placeholder="3 lines of textarea" rows="3">{{content}}</textarea>
-      </p>
-      
+        </p>
+        <p>
+          <div name="content is-normal">{{content}}</div>
+        </p>
+
+        <footer class="card-footer">
+        <div class="control">
+          <form action="/api/diary/{{id}}" method="POST">
+            <button type="submit" class="button is-link is-rounded">Update Entry</button>
+          </form>
+        </div>
         <div class="control">
           <form action="/api/diary/delete/{{id}}" method="POST">
-            <button type="submit" class="button is-danger is-rounded" >Delete Entry
+            <button type="submit" class="button is-danger is-rounded">Delete Entry
             </button>
           </form>
         </div>
+        </footer>
+
       </div>
     </div>
   </article>
