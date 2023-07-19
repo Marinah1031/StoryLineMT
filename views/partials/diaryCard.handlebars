@@ -1,41 +1,38 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<body>
 <div class="box">
   <article class="media">
     <div class="media-left">
+
       <figure class="image is-64x64">
         <img src="/images/LogoIconDesign.png" alt="Image">
       </figure>
+
     </div>
     <div class="media-content">
       <div class="content">
+
         <p>
           <strong>{{title}}</strong> <small>{{datetime createdAt}}</small>
         </p>
-        <p>
-        <div id="contentBox" name="content is-normal">{{content}}</div>
-        </p>
-         <p>
-        <textarea id="textBox" class="textarea" name="content is-normal">{{content}}</textarea>
-        </p>
-       
-        <footer class="card-footer">
-           <button class="button is-link is-light is-rounded" id="editButton" >Edit Entry</button>
-          <div class="control">
-            <form action="/api/diary/{{id}}" method="POST">
-              <button type="submit" class="button is-link is-rounded">Update Entry</button>
-            </form>
-          </div>
-          <div class="control">
-            <form action="/api/diary/delete/{{id}}" method="POST">
-              <button type="submit" class="button is-danger is-rounded">Delete Entry
-              </button>
-            </form>
-          </div>
-        </footer>
 
       </div>
-    </div>
-  </article>
+
+      <div class="control">
+        <form action="/api/diary/{{id}}" method="POST">
+        <button type="submit" class="button is-link is-rounded">Update Entry</button>
+          <textarea id="textBox" class="textarea" name="content">{{content}}</textarea>
+        </form>
+      </div>
+
+      <div class="control">
+        <form action="/api/diary/delete/{{id}}" method="POST">
+          <button type="submit" class="button is-danger is-rounded">Delete Entry
+          </button>
+        </form>
+      </div>
+
+
+ 
 </div>
-</body>
+</article>
+</div>
+
