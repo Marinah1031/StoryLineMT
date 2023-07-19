@@ -1,49 +1,32 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <div class="box">
   <article class="media">
     <div class="media-left">
       <figure class="image is-64x64">
-        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+        <img src="/images/LogoIconDesign.png" alt="Image">
       </figure>
     </div>
     <div class="media-content">
       <div class="content">
         <p>
           <strong>{{title}}</strong> <small>{{datetime createdAt}}</small>
-          <br>
-
-        </p>
-      </div>
       <div class="control">
         <form action="/api/diary/{{id}}" method="POST">
-          <button type="submit">Update Entry</button>
-          <textarea name="content" placeholder="5 lines of textarea" rows="5">{{content}}</textarea>
+          <button type="submit" class="button is-success">Update Entry</button>
         </form>
       </div>
-      <div class="control">
-        <form action="/api/diary/delete/{{id}}" method="POST">
-          <button type="submit">Delete Entry</button>
-        </form>
-      </div>
-
-      <nav class="level is-mobile">
-        <div class="level-left">
-          <a class="level-item" aria-label="reply">
-            <span class="icon is-small">
-              <i class="fas fa-reply" aria-hidden="true"></i>
-            </span>
-          </a>
-          <a class="level-item" aria-label="retweet">
-            <span class="icon is-small">
-              <i class="fas fa-retweet" aria-hidden="true"></i>
-            </span>
-          </a>
-          <a class="level-item" aria-label="like">
-            <span class="icon is-small">
-              <i class="fas fa-heart" aria-hidden="true"></i>
-            </span>
-          </a>
+      </p>
+<p>
+      <textarea name="content" placeholder="3 lines of textarea" rows="3">{{content}}</textarea>
+      </p>
+      
+        <div class="control">
+          <form action="/api/diary/delete/{{id}}" method="POST">
+            <button type="submit" class="button is-danger is-rounded" >Delete Entry
+            </button>
+          </form>
         </div>
-      </nav>
+      </div>
     </div>
   </article>
 </div>
