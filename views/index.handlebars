@@ -5,25 +5,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StoryLines - Home</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/public/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 </head>
 
 <body>
-  <header>
-    <h1>StoryLines</h1>
-  </header>
+  <section class="hero is-info">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">
+          StoryLines
+        </h1>
+        <img src="/images/Logo.png" alt="Logo" class="logo">
+        <div class="section is-small">
+          <h2 class="subtitle">Welcome to StoryLines!</h2>
+          <p>A place to unwind, write about your life, and grow as a person.</p>
+          <div class="section is-small"></div>
+            <a href="/login" class="button is-primary">Unlock Diary</a>
+            <a href="/register" class="button is-primary">Register New User</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <main>
-    <h2>Welcome to StoryLines!</h2>
-    <p>This is the home page of your online diary.</p>
-    <a href="/diary">Go to Diary</a>
-  </main>
-
-  <footer>
-    <p>&copy; 2023 StoryLines. All rights reserved.</p>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>&copy; 2023 StoryLines. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="/js/main.js"></script>
 </body>
 
 </html>
+
+
