@@ -33,7 +33,7 @@ router.get('/login', (req, res) => {
     const userId = req.session.user_id;
     console.log(userId, req.session)
     const user = await User.findByPk(userId, {
-      include: [{ model: Diary, order: [['createdAt', 'desc']]}]
+      include: [{ model: Diary, order: [['createdAt', 'ASC']]}]
     })
 
     if (!user) {
