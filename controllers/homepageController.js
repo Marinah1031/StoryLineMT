@@ -33,14 +33,16 @@ router.get('/login', (req, res) => {
     const userId = req.session.user_id;
     console.log(userId, req.session)
     const user = await User.findByPk(userId, {
-      include: [{ model: Diary, order: [['createdAt', 'ASC']]}]
+      include: [{ model: Diary}]
     })
 
     if (!user) {
-      console.log('issues')
       return res.status(404).json({ message: ':/'})
     }
-    const stories = user.get({ plain: true }).diaries
+    const stories = user.get({ plain: true }).diaries.sort(
+      (a,b) => b.createdAt - a.createdAt
+    )
+      console.log('issues', stories)
 
      const diaryEntries = stories
      res.render('diary', { diaryEntries });
