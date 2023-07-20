@@ -64,8 +64,12 @@ https://github.com/cjacobs3971
 https://github.com/Kimberlyc1904
 https://github.com/Marinah1031
 TA Nick Graffis
-TA Nahn
+TA Nahn Nguyen
+TA Jesus Emmanuel Perea Bautista
 ```
+## GitHub/Heroku
+(https://github.com/Kimberlyc1904/storyLine)
+
 
 ## Sources
 ```
