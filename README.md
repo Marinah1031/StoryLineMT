@@ -38,33 +38,25 @@ Meet good-quality coding standards (file structure, naming conventions, follows 
 Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 ```
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [storyLine](#storyline)
   - [Description](#description)
   - [User Story](#user-story)
   - [Requirements](#requirements)
-  - [Table of Contents (Optional)](#table-of-contents-optional)
-  - [Installation](#installation)
+  - [Table of Contents](#table-of-contents)
   - [Usage](#usage)
-  - [Credits](#credits)
   - [Colaborators](#colaborators)
   - [Sources](#sources)
   - [Features](#features)
 
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+StoryLine Diaries will empower users to capture and reflect on their life's moments, fostering self-awareness, personal growth, and a deeper understanding of their own narrative.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
 
-![alt text](assets/images/screenshot.png)
+![alt text](assets/images/ScreenShot.png)
 
-## Credits
 
 ## Colaborators
 ```
@@ -73,8 +65,8 @@ https://github.com/Kimberlyc1904
 https://github.com/Marinah1031
 TA Nick Graffis
 TA Nahn
-
 ```
+
 ## Sources
 ```
 ChatGPT
@@ -84,9 +76,9 @@ Stack Overflow
 ```
 
 ## Features
-
+```
 Log personal diary entries.
 Create a prompt to get an idea of something to write about.
 express session handler - cookie for mainting your session.
 Add and Delete entries
-
+```
