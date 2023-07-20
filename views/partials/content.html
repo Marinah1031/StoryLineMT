@@ -1,0 +1,23 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const contentBox = document.getElementById('contentBox');
+    const textBox = document.getElementById('textBox');
+    const editButton = document.getElementById('editButton');
+
+    // Initially, hide the textarea and show the content box
+    textBox.style.display = 'none';
+    contentBox.style.display = 'block';
+
+    editButton.addEventListener('click', function () {
+      // Toggle the visibility of the content box and the textarea
+      if (contentBox.style.display === 'none') {
+        contentBox.style.display = 'block';
+        textBox.style.display = 'none';
+      } else {
+        contentBox.style.display = 'none';
+        textBox.style.display = 'block';
+        textBox.focus();
+      }
+    });
+  });
+</script>
