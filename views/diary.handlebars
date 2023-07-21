@@ -1,21 +1,22 @@
-<h1 class="title is-1 has-text-centered" >My Diary</h1>
-
-
+{{!-- Main title of the website --}}
+<h1 class="title is-1 has-text-centered">My Diary</h1>
+{{!-- Prompt is inserted here with POST route --}}
 <div class="diary-entry-form has-text-centered">
   <h2 class="title is-3">Create Diary Entry</h2>
   <button id="generatePrompt" class="button is-warning">Generate Prompt</button>
   <div class="promptArea"></div>
   <form action="/api/diary" method="POST">
+{{!-- Text input areas for diary entries --}}
+    <p><input type="text" class="input is-primary" name="title" placeholder="Title" required>
+    </p>
+    <textarea name="content" class="textarea is-primary" placeholder="Content" rows="10" required></textarea>
+    <button type="submit" class="button is-success">Save Entry</button>
 
-    <p><input type="text"class="input is-primary" name="title" placeholder="Title" required>
-</p>
-    <textarea name="content" class="textarea is-primary" placeholder="Content" rows="10"required></textarea>
-    <button type="submit" class="button is-success" >Save Entry</button>
-     
   </form>
 </div>
 
-<div class="diary-entries" >
+{{!-- Retrieving previous diary entires --}}
+<div class="diary-entries">
   <h2 class="title is-5">Previous Diary Entries</h2>
 
   {{#each diaryEntries}}
@@ -24,4 +25,3 @@
   </form>
 </div>
 <script src="/js/prompt.js"></script>
-

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{{!-- stylesheets that were implemented into the site --}}
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,19 +17,22 @@
         <h1 class="title">
           StoryLines
         </h1>
+        {{!-- Unique logo input --}}
         <img src="/images/Logo.png" alt="Logo" class="logo">
         <div class="section is-small">
           <h2 class="subtitle">Welcome to StoryLines!</h2>
           <p>A place to unwind, write about your life, and grow as a person.</p>
           <div class="section is-small"></div>
-            <a href="/login" class="button is-primary">
-             <i class="small material-icons">vpn_key</i>
-              Unlock Diary
-            </a>
-            <a href="/register" class="button is-primary">Register New User</a>
-          </div>
+          {{!-- Login Button --}}
+          <a href="/login" class="button is-primary">
+            <i class="small material-icons">vpn_key</i>
+            Unlock Diary
+          </a>
+          {{!-- Register Button --}}
+          <a href="/register" class="button is-primary">Register New User</a>
         </div>
       </div>
+    </div>
     </div>
   </section>
 
@@ -43,5 +46,3 @@
 </body>
 
 </html>
-
-

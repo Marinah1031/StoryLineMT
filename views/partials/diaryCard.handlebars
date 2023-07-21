@@ -9,26 +9,26 @@
     </div>
     <div class="media-content">
       <div class="content">
-
+{{!-- Shows title, then date it was created --}}
         <p>
           <strong>{{title}}</strong> <small>{{datetime createdAt}}</small>
         </p>
 
       </div>
-
+{{!-- Button for updating entries already made --}}
       <div class="control">
         <form action="/api/diary/{{id}}" method="POST">
-        <button type="submit" class="button is-link is-rounded">Update Entry</button>
+          <button type="submit" class="button is-link is-rounded">Update Entry</button>
           <textarea id="textBox" class="textarea" name="content">{{content}}</textarea>
         </form>
       </div>
-
+{{!-- Button for deleting entries no longer wanted --}}
       <div class="control">
         <form action="/api/diary/delete/{{id}}" method="POST">
           <button type="submit" class="button is-danger is-rounded">Delete Entry
           </button>
         </form>
       </div>
-</div>
-</article>
+    </div>
+  </article>
 </div>

@@ -1,20 +1,21 @@
-<h1 class="title is-1 has-text-centered" >Register</h1>
+{{!-- Register page that requires username and password --}}
+<h1 class="title is-1 has-text-centered">Register</h1>
 <div class="has-text-centered">
-<form action="/api/users/register" method="POST"> <!-- changed this line-->
-  <input type="text" name="username" placeholder="Username" required>
-  <input type="password" name="password" placeholder="Password" required>
-  <button id="register" class="button is-warning ">Register</button>
-</form>
+  <form action="/api/users/register" method="POST"> <!-- changed this line-->
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button id="register" class="button is-warning ">Register</button>
+  </form>
 </div>
 <section class="hero is-info">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <h1 class="title">
-          StoryLines
-        </h1>
-        <img src="/images/Logo.png" alt="Logo" class="logo">
-        <div class="section is-small">
-        </div>
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        StoryLines
+      </h1>
+      <img src="/images/Logo.png" alt="Logo" class="logo">
+      <div class="section is-small">
       </div>
     </div>
-  </section>
+  </div>
+</section>
