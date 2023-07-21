@@ -49,7 +49,12 @@ router.post('/register', async (req, res) => {
     console.log('test')
     const newUser = await User.create(req.body);
     //res.status(201).json(newUser);
-    res.redirect('/diary');
+    req.session.user_id = newUser.id
+    // Redirect the user to the diary page
+    req.session.save(() => {
+      
+       res.redirect('/diary');
+    })
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });

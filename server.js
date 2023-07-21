@@ -27,10 +27,13 @@ app.use(
 
 // Routes
 const controllers = require('./controllers');
+const sequelize = require('./config/connection');
 app.use(controllers);
 
-// Start the server
+sequelize.sync({ force: false }).then(() => {
+  // Start the server
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
 });
 
+})
